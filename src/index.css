@@ -12,3 +12,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.home {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./assets/zion.jpg);
+  background-size: cover;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  color: white;
+  background: gray;
+}
+.menuIcon {
+  padding: 1rem;
+}
+.nav > h1 {
+  margin: 0;
+  padding: 1rem;
+}
