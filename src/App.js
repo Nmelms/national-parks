@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useEffect } from "react";
+import { getImage } from "./services/UserService.js";
+import useFetch from "./services/useFetch";
 
 function App() {
+  const API_KEY = "GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913";
+  const { data, loading, error } = useFetch(
+    `https://developer.nps.gov/api/v1/parks?&api_key=${API_KEY}`
+  );
+  if (loading) return <h1>Loading...</h1>;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>{console.log(data)}</h1>
     </div>
   );
 }
