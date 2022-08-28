@@ -4,6 +4,7 @@ import { getImage } from "./services/UserService.js";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import useFetch from "./services/useFetch";
+import Featured from "./components/Featured";
 
 function App() {
   const API_KEY = "GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913";
@@ -13,14 +14,12 @@ function App() {
   if (loading) return <h1>Loading...</h1>;
 
   if (error) return <h1>error</h1>;
-  {
-    console.log(data);
-  }
 
   return (
     <>
       <NavBar />
       <Home />
+      <Featured />
     </>
   );
 }
