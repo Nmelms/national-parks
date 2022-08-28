@@ -8,10 +8,10 @@ import Featured from "./components/Featured";
 
 function App() {
   const API_KEY = "GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913";
-  const { data, loading, error } = useFetch(
+  const { data, loading, error, setLoading } = useFetch(
     `https://developer.nps.gov/api/v1/parks?stateCode=az&api_key=${API_KEY}`
   );
-  if (loading) return <h1>Loading...</h1>;
+
 
   if (error) return <h1>error</h1>;
 
@@ -19,7 +19,7 @@ function App() {
     <>
       <NavBar />
       <Home />
-      <Featured />
+      <Featured loading={loading} setLoading={setLoading} />
     </>
   );
 }
