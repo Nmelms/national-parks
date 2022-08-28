@@ -18,7 +18,6 @@ export default function Featured() {
       let num = Math.floor(Math.random() * (400 + 1));
       if (!parks.includes(data.data[num])) {
         parks.push(data.data[num]);
-        console.log(data.data[num]);
       }
     }
 

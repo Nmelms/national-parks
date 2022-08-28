@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import useFetch from "./services/useFetch";
 import Featured from "./components/Featured";
 import Activities from "./components/Activities";
+import Parks from "./components/Parks";
 
 function App() {
   const API_KEY = "GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913";
@@ -17,10 +18,11 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      {/* <NavBar />
       <Home />
       <Featured loading={loading} setLoading={setLoading} />
-      <Activities />
+      <Activities /> */}
+      <Parks />
     </>
   );
 }

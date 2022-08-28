@@ -6,9 +6,9 @@ export default function Activities() {
   return (
     <div className="activities">
       <ActivityCard
-        title={"Find A CampGrouned"}
+        title={"Find A Park"}
         cardType={"activityCardLeft"}
-        descprtion={"Cliick here to explore campgroudn"}
+        descprtion={"Find A Park Near you"}
         dummy={dummy}
       />
       <ActivityCard
@@ -19,8 +19,8 @@ export default function Activities() {
       />
       <ActivityCard
         cardType={"activityCardLeft"}
-        title={"Explore activies near you"}
-        descprtion={"Cliick here to explore campgroudn"}
+        title={"Stay up To date"}
+        descprtion={"Recent News and alerts"}
         dummy={dummy}
       />
     </div>
