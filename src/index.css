@@ -62,6 +62,16 @@ code {
   width: 100vw;
   background: gray;
 }
+.featuredCard {
+  max-width: 80vw;
+  min-width: 80vw;
+  height: 50vw;
+  margin: 0.5rem;
+}
 .featured {
-  height: 50vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
 }

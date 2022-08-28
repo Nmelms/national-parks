@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../services/useFetch";
+import FeaturedCard from "./FeaturedCard";
 
 export default function Featured() {
   const [featuredParks, setFeaturedParks] = useState([]);
@@ -13,9 +14,17 @@ export default function Featured() {
   if (data)
     for (let i = 0; i < 3; i++) {
       let num = Math.floor(Math.random() * (40 + 1));
-      console.log(num);
+
       parks.push(data.data[num]);
     }
   console.log(parks);
-  return <div className="featured">{parks[1].fullName}</div>;
+  return (
+    <div className="featured">
+      {parks.map((item) => {
+        return (
+          <FeaturedCard name={item.fullName} background={item.images[0].url} />
+        );
+      })}
+    </div>
+  );
 }
