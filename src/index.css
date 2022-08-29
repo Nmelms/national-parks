@@ -126,7 +126,7 @@ code {
   width: 50%;
 }
 .parks {
-  height: 100vh;
+  height: 50vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -138,7 +138,7 @@ code {
   text-align: center;
   background-image: url("./assets/park.jpg");
   background-size: cover;
-  height: 40vh;
+  min-height: 40vh;
   background-color: black;
 }
 .selectorWrapper {
@@ -151,4 +151,11 @@ code {
   position: absolute;
   top: 34vh;
   z-index: 1;
+}
+.tempCard {
+  height: 200px;
+  width: 200px;
+}
+.selectedParks {
+  margin-top: 5rem;
 }
