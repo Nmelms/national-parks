@@ -1,16 +1,19 @@
 import React from "react";
 import dummy from "../assets/GC.jpg";
+import { Link } from "react-router-dom";
 import ActivityCard from "./ActivityCard";
 
 export default function Activities() {
   return (
     <div className="activities">
-      <ActivityCard
-        title={"Find A Park"}
-        cardType={"activityCardLeft"}
-        descprtion={"Find A Park Near you"}
-        dummy={dummy}
-      />
+      <Link to="/parks">
+        <ActivityCard
+          title={"Find A Park"}
+          cardType={"activityCardLeft"}
+          descprtion={"Find A Park Near you"}
+          dummy={dummy}
+        />
+      </Link>
       <ActivityCard
         cardType={"activityCardRight"}
         title={"Watch Nature WebCams"}

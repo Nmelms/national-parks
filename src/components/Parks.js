@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NavBar from "./NavBar";
 import useFetch from "../services/useFetch";
 import FeaturedCard from "./FeaturedCard";
 
@@ -24,6 +25,7 @@ export default function Parks() {
   return (
     <>
       <div className="parks">
+        <NavBar />
         <header className="parksHeader">
           <h1>Explore Parks</h1>
         </header>

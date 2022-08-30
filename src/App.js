@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import useFetch from "./services/useFetch";
 import Featured from "./components/Featured";
 import Activities from "./components/Activities";
+
 import Parks from "./components/Parks";
 
 function App() {
@@ -18,11 +19,10 @@ function App() {
 
   return (
     <>
-      {/* <NavBar />
+      <NavBar />
       <Home />
       <Featured loading={loading} setLoading={setLoading} />
-      <Activities /> */}
-      <Parks />
+      <Activities />
     </>
   );
 }

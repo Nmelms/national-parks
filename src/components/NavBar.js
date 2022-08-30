@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -11,7 +12,9 @@ export default function NavBar() {
   return (
     <>
       <nav className="nav">
-        <h1>national parks</h1>
+        <Link to="/">
+          <h1>national parks</h1>
+        </Link>
         <FontAwesomeIcon
           onClick={handleClick}
           className="menuIcon"
