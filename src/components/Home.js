@@ -10,14 +10,16 @@ export default function Home({ bgPic, featuredParks }) {
     console.log("click");
   };
   return (
-    <div className="home">
-      <NavBar />
-      <h1 onClick={handleClick}>Explore America's National Parks</h1>
-      <Link className="exploreBtn" to="/parks">
-        Explore Parks
-      </Link>
+    <>
+      <div className="home">
+        <NavBar />
+        <h1 onClick={handleClick}>Explore America's National Parks</h1>
+        <Link className="exploreBtn" to="/parks">
+          Explore Parks
+        </Link>
+      </div>
       <Featured featuredParks={featuredParks} />
       <Activities />
-    </div>
+    </>
   );
 }
