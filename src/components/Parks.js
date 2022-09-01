@@ -35,6 +35,9 @@ export default function Parks() {
             name="states"
             id="states"
           >
+            <option value="none" selected disabled hidden>
+              Select a State
+            </option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
