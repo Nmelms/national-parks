@@ -41,7 +41,8 @@ code {
   width: 100vw;
   color: white;
   background: gray;
-  min-height: fit-content;
+  min-height: 50px;
+  height: 6vh;
 }
 .menuIcon {
   padding: 1rem;
@@ -85,6 +86,7 @@ code {
   filter: brightness(75%);
 }
 .featuredName {
+  margin-top: 0;
   position: absolute;
   color: white;
   z-index: 1;
@@ -138,15 +140,17 @@ code {
   align-items: center;
 }
 .parksHeader {
+  margin-top: 6vh;
   font-size: 8vw;
   color: white;
   text-align: center;
   background-image: url("./assets/park.jpg");
   background-size: cover;
-  min-height: 40vh;
+  min-height: 30vh;
   background-color: black;
 }
 .selectorWrapper {
+  border: 2px solid white;
   width: 80vw;
   display: flex;
   flex-direction: column;
@@ -154,16 +158,41 @@ code {
   height: 100px;
   background: black;
   position: absolute;
-  top: 34vh;
+  top: 30vh;
   z-index: 1;
 }
 .tempCard {
-  height: 200px;
-  width: 200px;
+  color: white;
+  position: relative;
+  filter: brightness(0.8);
+  font-size: 12px;
+  margin: 1rem;
+  min-height: 30vh;
+  width: 80vw;
+  background-position: center;
+  background-size: cover;
+}
+.tempCard:hover {
+  filter: brightness(1);
+  cursor: pointer;
+}
+.tempCard:active {
+  filter: brightness(1);
 }
 .selectedParks {
-  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  background-color: black;
+  width: 100vw;
+  min-height: 55vh;
+  overflow: auto;
 }
 .explore {
   background-color: red;
+}
+.parkName {
+  margin-top: 0;
+  background: rgba(0, 0, 0, 0.6);
 }

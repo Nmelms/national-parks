@@ -17,6 +17,7 @@ function App() {
   const { data, loading, error, setLoading } = useFetch(
     `https://developer.nps.gov/api/v1/parks?limit=400&api_key=${API_KEY}`
   );
+
   //creates a "featured Parks" array
   useEffect(() => {
     const parks = [];

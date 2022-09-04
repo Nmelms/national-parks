@@ -10,7 +10,6 @@ export default function Parks() {
   const [parkData, setParkData] = useState([]);
 
   const data = [];
-
   const handleChange = (e) => {
     axios
       .get(
@@ -24,8 +23,8 @@ export default function Parks() {
 
   return (
     <>
+      <NavBar />
       <div className="parks">
-        <NavBar />
         <header className="parksHeader">
           <h1>Explore Parks</h1>
         </header>
@@ -101,19 +100,14 @@ export default function Parks() {
                   className="tempCard"
                   style={{
                     backgroundImage: `url(${item.images[0].url})`,
-                    backgroundSize: "cover",
                   }}
                 >
-                  <h1>{item.fullName}</h1>
+                  <h1 className="parkName">{item.fullName}</h1>
                 </div>
               );
             })}
         </div>
       </div>
-      {/* {parkData.length > 0 &&
-        parkData.map((item, idx) => {
-          console.log(item);
-        })} */}
     </>
   );
 }
