@@ -1,15 +1,34 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
 import useFetch from "../services/useFetch";
 import FeaturedCard from "./FeaturedCard";
 
 import axios from "axios";
 
-export default function Parks() {
+export default function Parks({
+  setSelectedParkCode,
+  setSelectedParkData,
+  selectedParkData,
+  selectedParkCode,
+  allData,
+}) {
   const [stateCode, setStateCode] = useState(null);
   const [parkData, setParkData] = useState([]);
 
   const data = [];
+  let navigate = useNavigate();
+
+  //finds selected park in data
+  const onSelectedClick = (parkCode) => {
+    const selectedPark = allData?.data.filter(
+      (item) => item.parkCode === parkCode
+    );
+    console.log(selectedPark[0]);
+    setSelectedParkData(selectedPark[0]);
+    navigate("/selected");
+  };
+
   const handleChange = (e) => {
     axios
       .get(
@@ -93,14 +112,15 @@ export default function Parks() {
         <div className="selectedParks">
           {parkData.length > 0 &&
             parkData.map((item, index) => {
-              console.log(item.images[0].url);
               return (
                 <div
+                  parkcode={item.parkCode}
                   key={index}
                   className="tempCard"
                   style={{
                     backgroundImage: `url(${item.images[0].url})`,
                   }}
+                  onClick={() => onSelectedClick(item.parkCode)}
                 >
                   <h1 className="parkName">{item.fullName}</h1>
                 </div>

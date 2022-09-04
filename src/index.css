@@ -196,3 +196,9 @@ code {
   margin-top: 0;
   background: rgba(0, 0, 0, 0.6);
 }
+.selectedHeader {
+  background-position: center;
+  background-size: cover;
+  height: 30vh;
+  width: 100vw;
+}
