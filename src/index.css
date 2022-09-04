@@ -199,6 +199,34 @@ code {
 .selectedHeader {
   background-position: center;
   background-size: cover;
+  padding-top: 5vh;
   height: 30vh;
   width: 100vw;
+  color: white;
+  text-align: center;
+}
+.selectedDescripton {
+  background: blue;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.selectedInfo {
+  display: flex;
+  flex-direction: column;
+  background: forestgreen;
+}
+.selectedInfo > div {
+  padding: 0.5rem;
+  text-align: center;
+}
+.midImg {
+  height: 200px;
+  width: 70vw;
+  position: absolute;
+  bottom: -20%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
