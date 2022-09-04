@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
 import useFetch from "../services/useFetch";
 import FeaturedCard from "./FeaturedCard";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import axios from "axios";
 
@@ -45,6 +47,11 @@ export default function Parks({
       <NavBar />
       <div className="parks">
         <header className="parksHeader">
+          <FontAwesomeIcon
+            onClick={() => navigate("/")}
+            className="backBtn"
+            icon={faArrowLeft}
+          />
           <h1>Explore Parks</h1>
         </header>
         <div className="selectorWrapper">

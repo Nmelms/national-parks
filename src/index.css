@@ -7,7 +7,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+h1 {
+  margin: 0;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -205,6 +207,9 @@ code {
   color: white;
   text-align: center;
 }
+.selectedHeader > h1 {
+  padding: 1rem 2rem 0 2rem;
+}
 .selectedDescripton {
   background: blue;
   position: relative;
@@ -229,4 +234,10 @@ code {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+.backBtn {
+  position: absolute;
+  top: 6vh;
+  left: 0.5rem;
+  color: blue;
 }

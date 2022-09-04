@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
 import NavBar from "./NavBar";
+import { useNavigate } from "react-router-dom";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function SelectedPark({ selectedParkData }) {
   useEffect(() => {
     console.log(selectedParkData.images[1].url);
   }, [selectedParkData]);
+
+  let navigate = useNavigate();
   return (
     <div>
       <NavBar />
@@ -14,6 +19,12 @@ export default function SelectedPark({ selectedParkData }) {
           backgroundImage: `url(${selectedParkData.images[1].url})`,
         }}
       >
+        <FontAwesomeIcon
+          onClick={() => navigate("/parks")}
+          className="backBtn"
+          icon={faArrowLeft}
+          size="2x"
+        />
         <h1>{selectedParkData.fullName}</h1>
       </div>
       <div className="selectedInfo">
