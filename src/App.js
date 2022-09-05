@@ -6,15 +6,19 @@ import NavBar from "./components/NavBar";
 import useFetch from "./services/useFetch";
 import Featured from "./components/Featured";
 import Activities from "./components/Activities";
+import Webcams from "./components/Webcams";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Parks from "./components/Parks";
 import SelectedPark from "./components/SelectedPark";
+import { act } from "react-dom/test-utils";
 
 function App() {
   const [featuredParks, setFeaturedParks] = useState([]);
   const [parkData, setParkData] = useState(null);
   const [selectedParkCode, setSelectedParkCode] = useState("");
-  const [selectedParkData, setSelectedParkData] = useState(null);
+  const [selectedParkData, setSelectedParkData] = useState([]);
+  const [webCams, setWebCams] = useState(null);
+  const [activeCams, setActiveCams] = useState([]);
   const API_KEY = "GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913";
   const { data, loading, error, setLoading } = useFetch(
     `https://developer.nps.gov/api/v1/parks?limit=400&api_key=${API_KEY}`
@@ -33,9 +37,7 @@ function App() {
       setFeaturedParks(parks);
     }
   }, [data]);
-  // useEffect(() => {
-  //   console.log(selectedParkData);
-  // });
+
   if (error) return <h1>error</h1>;
 
   return (
@@ -57,6 +59,17 @@ function App() {
         <Route
           path="/selected"
           element={<SelectedPark selectedParkData={selectedParkData} />}
+        />
+        <Route
+          path="/webcams"
+          element={
+            <Webcams
+              activeCams={activeCams}
+              setActiveCams={setActiveCams}
+              webCams={webCams}
+              setWebCams={setWebCams}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>

@@ -26,7 +26,6 @@ export default function Parks({
     const selectedPark = allData?.data.filter(
       (item) => item.parkCode === parkCode
     );
-    console.log(selectedPark[0]);
     setSelectedParkData(selectedPark[0]);
     navigate("/selected");
   };

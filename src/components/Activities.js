@@ -14,12 +14,14 @@ export default function Activities() {
           dummy={dummy}
         />
       </Link>
-      <ActivityCard
-        cardType={"activityCardRight"}
-        title={"Watch Nature WebCams"}
-        descprtion={"Cliick here to explore campgroudn"}
-        dummy={dummy}
-      />
+      <Link to="/webcams">
+        <ActivityCard
+          cardType={"activityCardRight"}
+          title={"Watch Nature WebCams"}
+          descprtion={"Cliick here to explore campgroudn"}
+          dummy={dummy}
+        />
+      </Link>
       <ActivityCard
         cardType={"activityCardLeft"}
         title={"Stay up To date"}
