@@ -241,7 +241,38 @@ code {
   left: 0.5rem;
   color: blue;
 }
+.webcamHeader {
+  margin-top: 10vh;
+}
 .webCamImg {
   width: 200px;
   height: 200px;
+}
+.webcams {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.webcams ul {
+  padding-left: 0;
+}
+.camCard {
+  color: white;
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  margin: 1rem;
+}
+.camTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 15%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.webCamBackBtn {
+  position: absolute;
+  top: 10vh;
+  left: 2rem;
 }
