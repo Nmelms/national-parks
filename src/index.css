@@ -198,11 +198,17 @@ code {
   margin-top: 0;
   background: rgba(0, 0, 0, 0.6);
 }
+.selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .selectedHeader {
+  position: relative;
   background-position: center;
   background-size: cover;
   padding-top: 5vh;
-  height: 30vh;
+  height: 45vh;
   width: 100vw;
   color: white;
   text-align: center;
@@ -211,26 +217,61 @@ code {
   padding: 1rem 2rem 0 2rem;
 }
 .selectedDescripton {
-  background: blue;
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10vh 1rem 125px 1rem;
+  background: black;
+  color: white;
   position: relative;
-  display: flex;
   flex-direction: column;
-  align-items: center;
 }
+.selectedDescripton h2 {
+  margin: 0;
+}
+h2:first-child {
+  text-align: center;
+  margin: 1rem;
+}
+
 .selectedInfo {
-  display: flex;
-  flex-direction: column;
-  background: forestgreen;
-}
-.selectedInfo > div {
+  position: absolute;
   padding: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 100px;
+  min-height: 100px;
+  margin-bottom: -55px;
+  border: 2px solid white;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: black;
+  color: white;
+  z-index: 3;
+}
+.selectedInfo * {
+  margin: 0;
+  padding: 0;
+}
+.selectedInfo div {
+  width: 40%;
   text-align: center;
 }
 .midImg {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
+  margin-bottom: -100px;
+  left: 0;
+  right: 0;
   height: 200px;
   width: 70vw;
-  position: absolute;
-  bottom: -20%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -275,4 +316,16 @@ code {
   position: absolute;
   top: 10vh;
   left: 2rem;
+}
+
+.location {
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+}
+.todo {
+  padding-top: 125px;
+  background-color: white;
+  color: black;
+  width: 100vw;
 }
