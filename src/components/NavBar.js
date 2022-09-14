@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { faBars, faMountainSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function NavBar() {
+  const dropDownRef = useRef();
   const [showDropDown, setShowDropDown] = useState(false);
 
   const handleClick = () => {
     setShowDropDown(!showDropDown);
+    showDropDown
+      ? dropDownRef.current.classList.add("showDropDown")
+      : dropDownRef.current.classList.remove("showDropDown");
   };
   return (
     <>
@@ -26,12 +30,11 @@ export default function NavBar() {
           icon={faBars}
         />
       </nav>
-      {showDropDown && (
-        <div className="dropDownContent">
-          <Link to="parks">Explore</Link>
-          <Link to="webcams">Nature Cams</Link>
-        </div>
-      )}
+      <div ref={dropDownRef} className="dropDownContent">
+        <Link to="parks">Explore</Link>
+        <Link to="webcams">Nature Cams</Link>
+        <Link to="webcams">News</Link>
+      </div>
     </>
   );
 }
