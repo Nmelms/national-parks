@@ -22,10 +22,12 @@ code {
   text-align: center;
   position: relative;
   z-index: 0;
-  background-image: url(./assets/zion.jpg);
+  background: rgba(0, 0, 0, 0.1) url(./assets/zion.jpg);
+  background-blend-mode: darken;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  text-shadow: -1px 1px 0 #000;
 }
 .home > h1 {
   padding-top: 2rem;
@@ -82,6 +84,8 @@ code {
   padding: 1rem;
 }
 .exploreBtn {
+  font-weight: bold;
+  border-radius: 5%;
   position: absolute;
   max-width: 60vw;
   align-self: center;
@@ -91,7 +95,8 @@ code {
   text-decoration: none;
   color: white;
   padding: 2rem;
-  background-color: red;
+  border: 2px solid white;
+  background-color: black;
 }
 .dropDownContent {
   display: flex;

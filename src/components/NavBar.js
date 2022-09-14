@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function NavBar() {
   const dropDownRef = useRef();
-  const [showDropDown, setShowDropDown] = useState(false);
+  const [showDropDown, setShowDropDown] = useState(true);
 
   const handleClick = () => {
     setShowDropDown(!showDropDown);
