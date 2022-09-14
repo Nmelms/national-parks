@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Image, Shimmer } from "react-shimmer";
 
 export default function FeaturedCard({
   name,
@@ -22,6 +23,7 @@ export default function FeaturedCard({
         >
           {name}
         </h3>
+
         <img
           className="featuredImage"
           style={{ display: loading ? "none" : "block" }}
