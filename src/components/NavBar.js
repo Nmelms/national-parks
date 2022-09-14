@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMountainSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function NavBar() {
@@ -12,8 +12,12 @@ export default function NavBar() {
   return (
     <>
       <nav className="nav">
-        <Link to="/">
-          <h1>national parks</h1>
+        <Link style={{ textDecoration: "none" }} className="logo" to="/">
+          <FontAwesomeIcon
+            style={{ padding: "0 .5rem", fontSize: "1.15em", color: "white" }}
+            icon={faMountainSun}
+          />
+          <h3 className="navTitle">NATIONAL PARKS</h3>
         </Link>
         <FontAwesomeIcon
           onClick={handleClick}
@@ -22,7 +26,12 @@ export default function NavBar() {
           icon={faBars}
         />
       </nav>
-      {showDropDown && <div className="dropDownContent">hello</div>}
+      {showDropDown && (
+        <div className="dropDownContent">
+          <Link to="parks">Explore</Link>
+          <Link to="webcams">Nature Cams</Link>
+        </div>
+      )}
     </>
   );
 }
