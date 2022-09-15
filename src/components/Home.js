@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import Featured from "./Featured";
 import Activities from "./Activities";
+import Footer from "./Footer";
 
 export default function Home({ bgPic, featuredParks }) {
   const handleClick = () => {
@@ -20,6 +21,7 @@ export default function Home({ bgPic, featuredParks }) {
       </div>
       <Featured featuredParks={featuredParks} />
       <Activities />
+      <Footer />
     </>
   );
 }
