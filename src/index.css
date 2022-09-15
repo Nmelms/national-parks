@@ -328,6 +328,7 @@ p {
 }
 .selectedHeader > h1 {
   padding: 1rem 2rem 0 2rem;
+  text-shadow: -1px 1px 0 #000;
 }
 .selectedDescripton {
   flex-direction: column;

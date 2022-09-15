@@ -3,11 +3,11 @@ import NavBar from "./NavBar";
 import { useNavigate } from "react-router-dom";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Footer from "./Footer";
 
 export default function SelectedPark({ selectedParkData }) {
   useEffect(() => {
     console.log(selectedParkData.images[1].url);
-
     window.scrollTo(0, 0);
   }, [selectedParkData]);
 
@@ -73,6 +73,7 @@ export default function SelectedPark({ selectedParkData }) {
           ))}
         </ul>
       </div>
+      <Footer />
     </div>
   );
 }
