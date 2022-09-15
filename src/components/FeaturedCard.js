@@ -3,9 +3,11 @@ import { Image, Shimmer } from "react-shimmer";
 
 export default function FeaturedCard({
   name,
+  parkCode,
   background,
   loading,
   setLoading,
+  onSelectedClick,
 }) {
   // const [loading, setLoading] = useState(true);
   // useEffect(() => {
@@ -16,7 +18,7 @@ export default function FeaturedCard({
 
   return (
     <>
-      <div className="imgWrapper">
+      <div onClick={() => onSelectedClick(parkCode)} className="imgWrapper">
         <h3
           // stye={{ background: `url(${background})` }}
           className="featuredName"

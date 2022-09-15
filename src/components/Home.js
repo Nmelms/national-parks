@@ -6,7 +6,12 @@ import Featured from "./Featured";
 import Activities from "./Activities";
 import Footer from "./Footer";
 
-export default function Home({ bgPic, featuredParks }) {
+export default function Home({
+  bgPic,
+  featuredParks,
+  setSelectedParkData,
+  allData,
+}) {
   const handleClick = () => {
     console.log("click");
   };
@@ -19,7 +24,11 @@ export default function Home({ bgPic, featuredParks }) {
           Explore Parks
         </Link>
       </div>
-      <Featured featuredParks={featuredParks} />
+      <Featured
+        allData={allData}
+        setSelectedParkData={setSelectedParkData}
+        featuredParks={featuredParks}
+      />
       <Activities />
       <Footer />
     </>

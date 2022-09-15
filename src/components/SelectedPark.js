@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function SelectedPark({ selectedParkData }) {
   useEffect(() => {
     console.log(selectedParkData.images[1].url);
+
+    window.scrollTo(0, 0);
   }, [selectedParkData]);
 
   let navigate = useNavigate();

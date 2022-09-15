@@ -21,7 +21,7 @@ function App() {
   const [activeCams, setActiveCams] = useState([]);
   const API_KEY = "GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913";
   const { data, loading, error, setLoading } = useFetch(
-    `https://developer.nps.gov/api/v1/parks?limit=400&api_key=${API_KEY}`
+    `https://developer.nps.gov/api/v1/parks?limit=500&api_key=${API_KEY}`
   );
 
   //creates a "featured Parks" array
@@ -43,7 +43,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home featuredParks={featuredParks} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              allData={data}
+              setSelectedParkData={setSelectedParkData}
+              featuredParks={featuredParks}
+            />
+          }
+        />
         <Route
           path="/parks"
           element={

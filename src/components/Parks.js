@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
 import useFetch from "../services/useFetch";
 import FeaturedCard from "./FeaturedCard";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faTree } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import axios from "axios";
@@ -23,6 +23,7 @@ export default function Parks({
 
   //finds selected park in data
   const onSelectedClick = (parkCode) => {
+    console.log(parkCode);
     const selectedPark = allData?.data.filter(
       (item) => item.parkCode === parkCode
     );
@@ -115,6 +116,12 @@ export default function Parks({
             <option value="WY">Wyoming</option>
           </select>
         </div>
+        {parkData.length === 0 && (
+          <div className="noData">
+            <h2>Select a state to start exploring.</h2>{" "}
+            <FontAwesomeIcon icon={faTree} size="4x" />
+          </div>
+        )}
         <div className="selectedParks">
           {parkData.length > 0 &&
             parkData.map((item, index) => {
