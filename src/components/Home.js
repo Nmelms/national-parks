@@ -11,8 +11,8 @@ export default function Home({ bgPic, featuredParks }) {
   };
   return (
     <>
+      <NavBar />
       <div className="home">
-        <NavBar />
         <h1 onClick={handleClick}>Explore America's National Parks</h1>
         <Link className="exploreBtn" to="/parks">
           Explore Parks

@@ -6,7 +6,7 @@ import ActivityCard from "./ActivityCard";
 export default function Activities() {
   return (
     <div className="activities">
-      <Link to="/parks">
+      <Link className="link" to="/parks">
         <ActivityCard
           title={"Find A Park"}
           cardType={"activityCardLeft"}
@@ -14,7 +14,7 @@ export default function Activities() {
           dummy={dummy}
         />
       </Link>
-      <Link to="/webcams">
+      <Link className="link" to="/webcams">
         <ActivityCard
           cardType={"activityCardRight"}
           title={"Watch Nature WebCams"}
