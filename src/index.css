@@ -161,8 +161,7 @@ p {
   display: flex;
   flex-direction: column;
   position: absolute;
-  bottom: 0;
-  margin-bottom: -60%;
+  bottom: 25%;
   color: white;
   z-index: 2;
 }
@@ -244,7 +243,7 @@ p {
   margin-bottom: 0.25rem;
 }
 .parks {
-  height: 50vh;
+  min-height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -292,11 +291,18 @@ p {
 }
 .camBody {
   margin-top: 0;
+  margin-bottom: 0;
   width: 100vw;
   background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.camLoading {
+  min-height: 64vh;
+  width: 100vw;
+  color: white;
+  background-color: black;
 }
 ul > :first-child {
   margin-top: 4rem;

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import pic from "../assets/GC.jpg";
 import FeaturedCard from "./FeaturedCard";
@@ -15,6 +15,7 @@ export default function Webcams({
   activeCams,
   setActiveCams,
 }) {
+  const [loading, setLoading] = useState(true);
   let navigate = useNavigate();
   useEffect(() => {
     axios
@@ -23,6 +24,7 @@ export default function Webcams({
       )
       .then((res) => {
         setWebCams(res.data.data);
+        setLoading(false);
       });
   }, []);
 
@@ -40,6 +42,8 @@ export default function Webcams({
         <header className="camHeader">
           <h1>Nature Cams</h1>
         </header>
+        {loading && <div className="camLoading">Loading</div>}
+
         <ul className="camBody">
           {activeCams &&
             activeCams.map((cam) => {
