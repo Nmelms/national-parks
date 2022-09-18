@@ -31,9 +31,9 @@ export default function NavBar() {
         />
       </nav>
       <div ref={dropDownRef} className="dropDownContent">
-        <Link to="parks">Explore</Link>
-        <Link to="webcams">Nature Cams</Link>
-        <Link to="webcams">News</Link>
+        <Link to="/parks">Explore</Link>
+        <Link to="/webcams">Nature Cams</Link>
+        <Link to="/webcams">News</Link>
       </div>
     </>
   );

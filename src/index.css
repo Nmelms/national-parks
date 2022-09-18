@@ -162,7 +162,7 @@ p {
   flex-direction: column;
   position: absolute;
   bottom: 0;
-  margin-bottom: -40%;
+  margin-bottom: -60%;
   color: white;
   z-index: 2;
 }
@@ -250,8 +250,11 @@ p {
   flex-direction: column;
   align-items: center;
 }
+.parks ul {
+  padding: 0;
+}
 .parksHeader {
-  margin-top: 6vh;
+  margin-top: 4vh;
   font-size: 8vw;
   color: white;
   text-align: center;
@@ -260,8 +263,46 @@ p {
   min-height: 30vh;
   background-color: black;
 }
+.camHeader {
+  min-width: 100vw;
+  margin-top: 6vh;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  background-image: url("./assets/park1.jpg");
+  background-size: cover;
+  min-height: 30vh;
+  background-color: black;
+}
+.camHeader h1 {
+  margin-top: 1.5rem;
+  text-shadow: -1px 1px 0 #000;
+}
+.camCard {
+  min-width: 70vw;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+
+  margin: 1rem;
+  background-color: white;
+}
+.camBody {
+  margin-top: 0;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ul > :first-child {
+  margin-top: 4rem;
+}
 .parksHeader h1 {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   text-shadow: -1px 1px 0 #000;
 }
 .selectorWrapper {
@@ -361,6 +402,7 @@ h2:first-child {
   min-height: 100px;
   margin-bottom: -55px;
   border: 2px solid white;
+  border-radius: 5px;
   width: 80%;
   display: flex;
   justify-content: space-between;
@@ -378,6 +420,7 @@ h2:first-child {
   text-align: center;
 }
 .midImg {
+  border-radius: 5px;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -413,13 +456,7 @@ h2:first-child {
 .webcams ul {
   padding-left: 0;
 }
-.camCard {
-  color: white;
-  height: 200px;
-  width: 200px;
-  background-size: cover;
-  margin: 1rem;
-}
+
 .camTitle {
   display: flex;
   justify-content: center;

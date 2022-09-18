@@ -21,12 +21,6 @@ export default function SelectedPark({ selectedParkData }) {
           backgroundImage: `url(${selectedParkData.images[1].url})`,
         }}
       >
-        <FontAwesomeIcon
-          onClick={() => navigate("/parks")}
-          className="backBtn"
-          icon={faArrowLeft}
-          size="2x"
-        />
         <h1>{selectedParkData.fullName}</h1>
         <div className="selectedInfo">
           <div className="location">

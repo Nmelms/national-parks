@@ -47,11 +47,6 @@ export default function Parks({
       <NavBar />
       <div className="parks">
         <header className="parksHeader">
-          <FontAwesomeIcon
-            onClick={() => navigate("/")}
-            className="backBtn"
-            icon={faArrowLeft}
-          />
           <h1>Explore Parks</h1>
         </header>
         <div className="selectorWrapper">
