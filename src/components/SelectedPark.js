@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import NavBar from "./NavBar";
 import { useNavigate } from "react-router-dom";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faTree } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
 
@@ -67,9 +67,12 @@ export default function SelectedPark({ selectedParkData }) {
       </div>
       <div className="todo">
         <h2>Things to Do</h2>
-        <ul>
+        <ul className="todoItem">
           {selectedParkData.activities.map((activity) => (
-            <li>{activity.name}</li>
+            <div className="todoItemWrapper">
+              <FontAwesomeIcon icon={faTree} />
+              <li>{activity.name}</li>
+            </div>
           ))}
         </ul>
       </div>
