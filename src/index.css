@@ -23,7 +23,8 @@ p {
 }
 .home {
   background-attachment: fixed;
-  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   padding-top: 6vh;
   display: flex;
