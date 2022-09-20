@@ -23,7 +23,7 @@ p {
 }
 .home {
   background-attachment: fixed;
-  height: 100vh;
+  height: 120vh;
   width: 100vw;
   padding-top: 6vh;
   display: flex;
