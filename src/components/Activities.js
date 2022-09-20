@@ -18,7 +18,7 @@ export default function Activities() {
         <ActivityCard
           cardType={"activityCardRight"}
           title={"Watch Nature WebCams"}
-          descprtion={"Cliick here to explore campgroudn"}
+          descprtion={"Click here to watch nature cams"}
           dummy={dummy}
         />
       </Link>

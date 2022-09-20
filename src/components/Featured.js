@@ -26,7 +26,7 @@ export default function Featured({
     <div className="featured">
       <h1>Featured Parks</h1>
       {loading && <h1>loading...</h1>}
-      {featuredParks &&
+      {featuredParks.length > 0 &&
         featuredParks.map((item) => {
           return (
             <FeaturedCard

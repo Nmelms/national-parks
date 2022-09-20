@@ -516,3 +516,39 @@ h2:first-child {
   background-position: center;
   border: 2px solid black;
 }
+
+@media screen and (min-width: 600px) {
+  .home h1 {
+    font-size: 100px;
+  }
+  .imgWrapper {
+    background-size: cover;
+    background-position: center;
+    max-width: 80vw;
+    height: 25vh;
+  }
+  .exploreBtn {
+    width: 30vw;
+  }
+  .activities {
+    min-height: 0;
+    flex-direction: row;
+    justify-content: center;
+    max-height: min-content;
+    padding-bottom: 4rem;
+  }
+  .link {
+    height: min-content;
+  }
+  .titleAndDescription {
+    width: 100%;
+  }
+  .activityCardLeft {
+    width: 35vw;
+    flex-direction: column;
+  }
+  .activityCardRight {
+    width: 35vw;
+    flex-direction: column;
+  }
+}

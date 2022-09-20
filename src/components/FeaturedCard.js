@@ -18,20 +18,21 @@ export default function FeaturedCard({
 
   return (
     <>
-      <div onClick={() => onSelectedClick(parkCode)} className="imgWrapper">
-        <h3
-          // stye={{ background: `url(${background})` }}
-          className="featuredName"
-        >
-          {name}
-        </h3>
+      {console.log(background)}
+      <div
+        onLoad={() => setLoading(false)}
+        style={{ backgroundImage: `url(${background})` }}
+        onClick={() => onSelectedClick(parkCode)}
+        className="imgWrapper"
+      >
+        <h3 className="featuredName">{name}</h3>
 
-        <img
+        {/* <img
           className="featuredImage"
           style={{ display: loading ? "none" : "block" }}
           src={background}
           onLoad={() => setLoading(false)}
-        />
+        /> */}
       </div>
     </>
   );
