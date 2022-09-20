@@ -22,14 +22,6 @@ export default function Activities() {
           dummy={dummy}
         />
       </Link>
-      <Link className="link" to="/webcams">
-        <ActivityCard
-          cardType={"activityCardLeft"}
-          title={"Stay up To date"}
-          descprtion={"Recent News and alerts"}
-          dummy={dummy}
-        />
-      </Link>
     </div>
   );
 }

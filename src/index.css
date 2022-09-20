@@ -23,8 +23,7 @@ p {
 }
 .home {
   background-attachment: fixed;
-  max-height: 100vh;
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   padding-top: 6vh;
   display: flex;
@@ -510,4 +509,12 @@ h2:first-child {
 }
 .footer p {
   margin: 0.5rem;
+}
+
+.articleCard {
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid black;
 }

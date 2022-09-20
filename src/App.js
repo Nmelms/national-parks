@@ -7,6 +7,7 @@ import useFetch from "./services/useFetch";
 import Featured from "./components/Featured";
 import Activities from "./components/Activities";
 import Webcams from "./components/Webcams";
+import Articles from "./components/Articles";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Parks from "./components/Parks";
 import SelectedPark from "./components/SelectedPark";
