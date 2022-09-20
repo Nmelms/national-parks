@@ -22,8 +22,7 @@ p {
   color: white;
 }
 .home {
-  background-attachment: fixed;
-  height: 120vh;
+  height: calc(100vh + 60px);
   width: 100vw;
   padding-top: 6vh;
   display: flex;
