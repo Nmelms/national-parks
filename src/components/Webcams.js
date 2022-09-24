@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import pic from "../assets/GC.jpg";
 import FeaturedCard from "./FeaturedCard";
 import axios from "axios";
@@ -9,31 +9,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavBar from "./NavBar";
 import noImg from "../assets/noImg.png";
 
-export default function Webcams({
-  webCams,
-  setWebCams,
-  activeCams,
-  setActiveCams,
-}) {
+export default function Webcams() {
   const [loading, setLoading] = useState(true);
-  let navigate = useNavigate();
-  useEffect(() => {
-    axios
-      .get(
-        `https://developer.nps.gov/api/v1/webcams?limit=500&api_key=GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913`
-      )
-      .then((res) => {
-        setWebCams(res.data.data);
-        setLoading(false);
-      });
-  }, []);
+  const [webCams, setWebCams] = useState(null);
+  const [error, setError] = useState(false);
+
+  const fetchData = async () => {
+    const res = await fetch(
+      `https://developer.nps.gov/api/v1/webcams?limit=500&api_key=GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913`
+    );
+
+    if (res.status === 500) {
+      setError(true);
+      return;
+    }
+
+    const data = await res.json();
+    const filtered = await data.data.filter((item) => item.status === "Active");
+    setWebCams(data.data);
+  };
 
   useEffect(() => {
-    if (webCams) {
-      const filtered = webCams.filter((item) => item.status === "Active");
-      setActiveCams(filtered);
-    }
-  }, [webCams]);
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -42,14 +40,13 @@ export default function Webcams({
         <header className="camHeader">
           <h1>Nature Cams</h1>
         </header>
-        {loading && <div className="camLoading">Loading</div>}
-
+        {error && <div>opps come back later</div>}
         <ul className="camBody">
-          {activeCams &&
-            activeCams.map((cam) => {
-              console.log(cam);
+          {webCams &&
+            webCams.map((cam) => {
               return (
                 <div
+                  key={cam.id}
                   className="camCard"
                   style={{
                     backgroundImage: cam.images[0]
@@ -64,42 +61,5 @@ export default function Webcams({
         </ul>
       </div>
     </>
-    // <div className="webcams">
-    //   <NavBar />
-    //   <header className="webcamHeader">Nature Webcams</header>
-    //   <FontAwesomeIcon
-    //     className="webCamBackBtn"
-    //     onClick={() => navigate("/")}
-    //     icon={faArrowLeft}
-    //   />
-    //   <ul>
-    //     {activeCams &&
-    //       activeCams.map((cam) => {
-    //         console.log(cam);
-    //         return (
-    //           <div
-    //             className="camCard"
-    //             style={{
-    //               backgroundImage: cam.images[0]
-    //                 ? `url(${cam.images[0].url})`
-    //                 : `url(${pic})`,
-    //             }}
-    //           >
-    //             <div className="camTitle">{cam.title}</div>
-    //           </div>
-    //           // <div>
-    //           //   <a href={cam.url}>
-    //           //     <li key={cam.id}>{cam.title}</li>
-    //           //   </a>
-    //           //   <img
-    //           //     className="webCamImg"
-    //           //     src={cam.images[0] ? cam.images[0].url : pic}
-    //           //   />
-    //           // </div>
-    //         );
-    //       })}
-    //   </ul>
-    //   {console.log(webCams)}
-    // </div>
   );
 }

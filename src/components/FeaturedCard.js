@@ -18,7 +18,6 @@ export default function FeaturedCard({
 
   return (
     <>
-      {console.log(background)}
       <div
         onLoad={() => setLoading(false)}
         style={{ backgroundImage: `url(${background})` }}

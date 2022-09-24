@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function useFetch(url) {
+  console.log(axios);
   const API_KEY = "GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913";
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
