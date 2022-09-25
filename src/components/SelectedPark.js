@@ -7,7 +7,6 @@ import Footer from "./Footer";
 
 export default function SelectedPark({ selectedParkData }) {
   useEffect(() => {
-    console.log(selectedParkData.images[1].url);
     window.scrollTo(0, 0);
   }, [selectedParkData]);
 
@@ -26,7 +25,7 @@ export default function SelectedPark({ selectedParkData }) {
           <div className="location">
             <h4>Location:</h4>
             <p>
-              {selectedParkData.addresses[0].city},{" "}
+              {selectedParkData.addresses[0].city},
               {selectedParkData.addresses[0].stateCode}
             </p>
           </div>

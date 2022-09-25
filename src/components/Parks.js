@@ -17,29 +17,24 @@ export default function Parks({
 }) {
   const [stateCode, setStateCode] = useState(null);
   const [parkData, setParkData] = useState([]);
+  // const [selectedParkData, setSelectedParkData] = useState();
 
   const data = [];
   let navigate = useNavigate();
 
   //finds selected park in data
-  const onSelectedClick = (parkCode) => {
-    console.log(parkCode);
-    const selectedPark = allData?.data.filter(
-      (item) => item.parkCode === parkCode
-    );
-    setSelectedParkData(selectedPark[0]);
+  const onSelectedClick = (item) => {
+    setSelectedParkData(item);
+    console.log(item);
     navigate("/selected");
   };
 
-  const handleChange = (e) => {
-    axios
-      .get(
-        `https://developer.nps.gov/api/v1/parks?limit=50&stateCode=${e}&api_key=GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913`
-      )
-      .then((res) => {
-        setParkData(res.data.data);
-        data.push(res.data);
-      });
+  const handleChange = async (e) => {
+    const res = await fetch(
+      `https://developer.nps.gov/api/v1/parks?limit=50&stateCode=${e}&api_key=GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913`
+    );
+    const data = await res.json();
+    setParkData(data.data);
   };
 
   return (
@@ -51,11 +46,13 @@ export default function Parks({
         </header>
         <div className="selectorWrapper">
           <select
+            data-testid="dropDown"
             onChange={(e) => handleChange(e.target.value)}
             name="states"
             id="states"
+            defaultValue="none"
           >
-            <option value="none" selected disabled hidden>
+            <option value="none" disabled hidden>
               Select a State
             </option>
             <option value="AL">Alabama</option>
@@ -122,13 +119,14 @@ export default function Parks({
             parkData.map((item, index) => {
               return (
                 <div
+                  data-testid="card"
                   parkcode={item.parkCode}
                   key={index}
                   className="tempCard"
                   style={{
                     backgroundImage: `url(${item.images[0].url})`,
                   }}
-                  onClick={() => onSelectedClick(item.parkCode)}
+                  onClick={() => onSelectedClick(item)}
                 >
                   <h1 className="parkName">{item.fullName}</h1>
                 </div>

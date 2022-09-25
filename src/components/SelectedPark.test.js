@@ -18,13 +18,13 @@ const response = rest.get(
       ctx.json({
         data: [
           {
-            id: "zyru",
+            id: 1,
             title: "Rocky",
             status: "Active",
             images: { url: "fakeurl.com" },
           },
           {
-            id: "dddd",
+            id: 1,
             title: "Rocky",
             status: "Active",
             images: { url: "fakeurl.com" },
@@ -43,6 +43,7 @@ const noResponse = rest.get(
 );
 
 const handlers = [response, noResponse];
+
 const server = new setupServer(...handlers);
 
 test("shoud fetch webcams and render", async () => {

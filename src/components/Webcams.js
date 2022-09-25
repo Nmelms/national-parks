@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import pic from "../assets/GC.jpg";
 import FeaturedCard from "./FeaturedCard";
 import axios from "axios";
@@ -18,12 +17,10 @@ export default function Webcams() {
     const res = await fetch(
       `https://developer.nps.gov/api/v1/webcams?limit=500&api_key=GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913`
     );
-
     if (res.status === 500) {
       setError(true);
       return;
     }
-
     const data = await res.json();
     const filtered = await data.data.filter((item) => item.status === "Active");
     setWebCams(data.data);
@@ -43,10 +40,10 @@ export default function Webcams() {
         {error && <div>opps come back later</div>}
         <ul className="camBody">
           {webCams &&
-            webCams.map((cam) => {
+            webCams.map((cam, index) => {
               return (
                 <div
-                  key={cam.id}
+                  key={index}
                   className="camCard"
                   style={{
                     backgroundImage: cam.images[0]
