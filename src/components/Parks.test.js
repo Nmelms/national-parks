@@ -88,6 +88,5 @@ test("renders card after clicking", async () => {
   const card = screen.getByTestId("card");
   expect(card).toBeInTheDocument();
   fireEvent.click(card);
-  console.log(setSelectedParkData);
   expect(setSelectedParkData).toHaveBeenCalledTimes(1);
 });

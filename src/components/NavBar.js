@@ -24,13 +24,18 @@ export default function NavBar() {
           <h3 className="navTitle">NATIONAL PARKS</h3>
         </Link>
         <FontAwesomeIcon
+          data-testid="menuIcon"
           onClick={handleClick}
           className="menuIcon"
           size="2x"
           icon={faBars}
         />
       </nav>
-      <div ref={dropDownRef} className="dropDownContent">
+      <div
+        ref={dropDownRef}
+        data-testid="dropDownContent"
+        className="dropDownContent"
+      >
         <Link to="/parks">Explore</Link>
         <Link to="/webcams">Nature Cams</Link>
         <Link to="/webcams">News</Link>

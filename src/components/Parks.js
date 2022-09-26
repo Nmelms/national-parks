@@ -25,7 +25,6 @@ export default function Parks({
   //finds selected park in data
   const onSelectedClick = (item) => {
     setSelectedParkData(item);
-    console.log(item);
     navigate("/selected");
   };
 
