@@ -106,7 +106,6 @@ p {
   background-color: black;
 }
 .dropDownContent {
-  opacity: 0;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -119,7 +118,6 @@ p {
   z-index: 5;
 }
 .dropDownContent * {
-  opacity: 0;
   padding: 0.25rem;
   color: white;
   text-decoration: none;
