@@ -8,13 +8,33 @@ import Home from "./Home";
 
 const featuredParks = jest.fn();
 
+test("renders the navbar component", async () => {
+  render(<Home featuredParks={featuredParks} />, { wrapper: MemoryRouter });
+  const navTitle = await screen.findByText("NATIONAL PARKS");
+  expect(navTitle).toBeVisible();
+});
+
 test("renders a home component with an explore button", async () => {
   render(<Home featuredParks={featuredParks} />, { wrapper: MemoryRouter });
   const explore = await screen.findByText("Explore Parks");
   expect(explore).toBeVisible();
 });
 
-test("it redirects to parks page when you cllick on button", async () => {
+test("renders the featured parks component", async () => {
+  render(<Home featuredParks={featuredParks} />, { wrapper: MemoryRouter });
+  const featured = await screen.findByText("Featured Parks");
+  expect(featured).toBeInTheDocument();
+});
+
+test("renders the footer component", async () => {
+  render(<Home featuredParks={featuredParks} />, { wrapper: MemoryRouter });
+  const footer = await screen.findByText(
+    "Made possible by the National Park API"
+  );
+  expect(footer).toBeVisible();
+});
+
+test("it redirects to parks page when you click on exlore button", async () => {
   render(
     <MemoryRouter>
       <Routes>
@@ -29,7 +49,7 @@ test("it redirects to parks page when you cllick on button", async () => {
   expect(text).toBeInTheDocument();
 });
 
-test("it redirects to webcams page when you click on explore button", async () => {
+test("it redirects to webcams page when you click on webcam div button", async () => {
   render(
     <MemoryRouter>
       <Routes>

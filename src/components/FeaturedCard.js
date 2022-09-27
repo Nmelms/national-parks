@@ -9,29 +9,16 @@ export default function FeaturedCard({
   setLoading,
   onSelectedClick,
 }) {
-  // const [loading, setLoading] = useState(true);
-  // useEffect(() => {
-  //   setLoading(false);
-  // }, [background]);
-
-  // if (loading) return <h1>Loading...</h1>;
-
   return (
     <>
       <div
+        data-testid="featuredCard"
         onLoad={() => setLoading(false)}
         style={{ backgroundImage: `url(${background})` }}
         onClick={() => onSelectedClick(parkCode)}
         className="imgWrapper"
       >
         <h3 className="featuredName">{name}</h3>
-
-        {/* <img
-          className="featuredImage"
-          style={{ display: loading ? "none" : "block" }}
-          src={background}
-          onLoad={() => setLoading(false)}
-        /> */}
       </div>
     </>
   );

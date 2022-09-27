@@ -9,25 +9,28 @@ export default function Featured({
   setSelectedParkData,
   allData,
 }) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
 
   const onSelectedClick = (parkCode) => {
+    console.log(allData.data);
     const selectedPark = allData?.data.filter(
       (item) => item.parkCode === parkCode
     );
+
     setSelectedParkData(selectedPark[0]);
     navigate("/selected");
   };
+
   return (
     <div className="featured">
       <h1>Featured Parks</h1>
       {loading && <h1>loading...</h1>}
       {featuredParks.length > 0 &&
-        featuredParks.map((item) => {
+        featuredParks.map((item, index) => {
           return (
             <FeaturedCard
-              key={item.id}
+              key={index}
               parkCode={item.parkCode}
               onSelectedClick={onSelectedClick}
               setLoading={setLoading}
