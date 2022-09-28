@@ -51,14 +51,14 @@ export default function SelectedPark({ selectedParkData }) {
         <p>{selectedParkData.description}</p>
         <h2>Climate</h2>
         <p>{selectedParkData.weatherInfo}</p>
-        {/* <div
+        <div
           className="midImg"
           style={{
             backgroundImage: `url(${selectedParkData.images[2].url})`,
           }}
-        > */}
-        <div className="midImg">
-          <img src={selectedParkData.images[2].url} />
+        >
+          {/* <div className="midImg">
+          <img src={selectedParkData.images[2].url} /> */}
         </div>
       </div>
       <div className="todo">

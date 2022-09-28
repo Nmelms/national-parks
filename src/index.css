@@ -390,7 +390,7 @@ p {
   flex-direction: column;
   display: flex;
   justify-content: flex-start;
-  padding: 10vh 1rem 125px 1rem;
+  padding: 10vh 1rem 15vh 1rem;
   background: black;
   color: white;
   position: relative;
@@ -439,10 +439,15 @@ h2:first-child {
 }
 .midImg {
   position: absolute;
-  bottom: 0;
-  margin-bottom: -20vw;
-  height: 40vw;
-  max-height: 500px;
+  height: 30vh;
+  max-height: 300px;
+  width: 90%;
+  bottom: -15vh;
+  /* margin-bottom: -15%; */
+
+  /* max-height: 500px;
+  max-width: 500px; */
+  align-self: center;
   /* border-radius: 5px; */
   /* width: 60vw;
   height: 500px; */
@@ -459,9 +464,9 @@ h2:first-child {
   /* height: auto; */
   /* height: 20vw; */
   /* width: 70vw; */
-  /* background-size: contain;
+  background-size: contain;
   background-position: center;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
 }
 .midImg img {
   max-width: 100%;
@@ -513,7 +518,7 @@ h2:first-child {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 125px;
+  padding-top: 15vh;
   background-color: white;
   color: black;
   width: 100vw;
