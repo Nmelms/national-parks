@@ -247,9 +247,9 @@ p {
   flex-direction: column;
   align-items: center;
 }
-.parks ul {
+/* .parks ul {
   padding: 0;
-}
+} */
 .parksHeader {
   margin-top: 4vh;
   font-size: 8vw;
@@ -261,6 +261,9 @@ p {
   background-color: black;
 }
 .camHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 100vw;
   margin-top: 6vh;
   font-size: 1.5rem;
@@ -268,33 +271,36 @@ p {
   text-align: center;
   background-image: url("./assets/park1.jpg");
   background-size: cover;
+  background-position: center;
   min-height: 30vh;
   background-color: black;
 }
 .camHeader h1 {
-  margin-top: 1.5rem;
   text-shadow: -1px 1px 0 #000;
 }
 .camCard {
-  min-width: 70vw;
+  width: 70vw;
+  max-width: 450px;
   border: 2px solid white;
   border-radius: 5px;
   color: white;
   height: 200px;
-  width: 200px;
   background-size: cover;
-
   margin: 1rem;
   background-color: white;
+  background-size: cover;
+  background-position: center;
 }
 .camBody {
+  padding: 4rem 1rem 1rem 1rem;
   margin-top: 0;
   margin-bottom: 0;
   width: 100vw;
   background-color: black;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 .camLoading {
   min-height: 64vh;
@@ -302,9 +308,9 @@ p {
   color: white;
   background-color: black;
 }
-ul > :first-child {
+/* ul > :first-child {
   margin-top: 4rem;
-}
+} */
 .parksHeader h1 {
   margin-top: 1.5rem;
   text-shadow: -1px 1px 0 #000;
@@ -348,6 +354,7 @@ ul > :first-child {
   background-color: black;
   width: 100vw;
   min-height: 55vh;
+  height: 65vh;
   overflow: auto;
 }
 .explore {
@@ -358,9 +365,11 @@ ul > :first-child {
   background: rgba(0, 0, 0, 0.6);
 }
 .selected {
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .selectedHeader {
   position: relative;
@@ -377,6 +386,7 @@ ul > :first-child {
   text-shadow: -1px 1px 0 #000;
 }
 .selectedDescripton {
+  max-width: 1200px;
   flex-direction: column;
   display: flex;
   justify-content: flex-start;
@@ -389,6 +399,9 @@ ul > :first-child {
 .selectedDescripton h2 {
   margin: 0;
 }
+.selectedDescripton p {
+  margin: 1rem 0 3rem 0;
+}
 h2:first-child {
   text-align: center;
   margin: 1rem;
@@ -397,6 +410,7 @@ h2:first-child {
 .selectedInfo {
   position: absolute;
   padding: 0.5rem;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   bottom: 0;
@@ -424,19 +438,34 @@ h2:first-child {
   text-align: center;
 }
 .midImg {
-  border-radius: 5px;
   position: absolute;
+  bottom: 0;
+  margin-bottom: -20vw;
+  height: 40vw;
+  max-height: 500px;
+  /* border-radius: 5px; */
+  /* width: 60vw;
+  height: 500px; */
+  /* max-width: 1200px; */
+  /* height: auto;
+  position: absolute; */
+  /* 
   margin-left: auto;
   margin-right: auto;
   bottom: 0;
-  margin-bottom: -100px;
+  margin-bottom: -10vw;
   left: 0;
-  right: 0;
-  height: 200px;
-  width: 70vw;
-  background-size: cover;
+  right: 0; */
+  /* height: auto; */
+  /* height: 20vw; */
+  /* width: 70vw; */
+  /* background-size: contain;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+}
+.midImg img {
+  max-width: 100%;
+  max-height: 100%;
 }
 .backBtn {
   position: absolute;
@@ -480,6 +509,10 @@ h2:first-child {
   min-width: 100%;
 }
 .todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-top: 125px;
   background-color: white;
   color: black;
@@ -491,6 +524,8 @@ h2:first-child {
 }
 .todoItem {
   list-style-type: none;
+  width: 100vw;
+  max-width: 1200px;
 }
 .todoItemWrapper {
   display: flex;
@@ -500,6 +535,7 @@ h2:first-child {
   padding-left: 0.5rem;
 }
 .footer {
+  width: 100vw;
   border-top: 1px solid white;
   height: 100px;
   background-color: black;
@@ -519,7 +555,7 @@ h2:first-child {
 
 @media screen and (min-width: 600px) {
   .home h1 {
-    font-size: 100px;
+    font-size: 80px;
   }
   .imgWrapper {
     background-size: cover;

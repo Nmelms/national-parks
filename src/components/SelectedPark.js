@@ -51,18 +51,21 @@ export default function SelectedPark({ selectedParkData }) {
         <p>{selectedParkData.description}</p>
         <h2>Climate</h2>
         <p>{selectedParkData.weatherInfo}</p>
-        <img
+        {/* <div
           className="midImg"
           style={{
             backgroundImage: `url(${selectedParkData.images[2].url})`,
           }}
-        />
+        > */}
+        <div className="midImg">
+          <img src={selectedParkData.images[2].url} />
+        </div>
       </div>
       <div className="todo">
         <h2>Things to Do</h2>
         <ul className="todoItem">
-          {selectedParkData.activities.map((activity) => (
-            <div className="todoItemWrapper">
+          {selectedParkData.activities.map((activity, index) => (
+            <div key={index} className="todoItemWrapper">
               <FontAwesomeIcon icon={faTree} />
               <li>{activity.name}</li>
             </div>
