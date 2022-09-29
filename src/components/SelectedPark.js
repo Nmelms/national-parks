@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import NavBar from "./NavBar";
+import img from "../assets/park.jpg";
 import { useNavigate } from "react-router-dom";
 import { faArrowLeft, faTree } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
 
 export default function SelectedPark({ selectedParkData }) {
+  console.log(selectedParkData);
   useEffect(() => {
     window.scrollTo(0, 0);
+    console.log(selectedParkData);
   }, [selectedParkData]);
 
   let navigate = useNavigate();
@@ -17,7 +20,10 @@ export default function SelectedPark({ selectedParkData }) {
       <div
         className="selectedHeader"
         style={{
-          backgroundImage: `url(${selectedParkData.images[1].url})`,
+          backgroundImage:
+            selectedParkData.images[1] === undefined
+              ? null
+              : `url(${selectedParkData.images[1].url})`,
         }}
       >
         <h1>{selectedParkData.fullName}</h1>
@@ -31,17 +37,24 @@ export default function SelectedPark({ selectedParkData }) {
           </div>
           <div>
             <h4>Enterence Fee</h4>
-            <p>{selectedParkData.entranceFees[0].cost}</p>
+            <p>
+              {selectedParkData.entranceFees[0] === undefined ? (
+                <p>no price available</p>
+              ) : (
+                selectedParkData.entranceFees[0].cost
+              )}
+            </p>
             {/* <p>{selectedParkData.entranceFees[0].description}</p> */}
           </div>
           <div>
             <h4>Phone #:</h4>
-            <p>{selectedParkData.contacts.phoneNumbers[0].phoneNumber}</p>
+
+            {selectedParkData.contacts.phoneNumbers[0] === undefined ? (
+              <p>no phone number available</p>
+            ) : (
+              selectedParkData.contacts.phoneNumbers[0].phoneNumber
+            )}
           </div>
-          {/* <div>
-          <h4>Email:</h4>
-          <p>{selectedParkData.contacts.emailAddresses[0].emailAddress}</p>
-        </div> */}
         </div>
       </div>
 
@@ -54,7 +67,10 @@ export default function SelectedPark({ selectedParkData }) {
         <div
           className="midImg"
           style={{
-            backgroundImage: `url(${selectedParkData.images[2].url})`,
+            backgroundImage:
+              selectedParkData.images[2] === undefined
+                ? `url(${img})`
+                : `url(${selectedParkData.images[2].url})`,
           }}
         >
           {/* <div className="midImg">

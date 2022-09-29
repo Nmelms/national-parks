@@ -643,4 +643,16 @@ h2:first-child {
     height: 15vw;
     width: 35vw;
   }
+  .selectedParks {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .tempCard {
+    width: 30vw;
+  }
+  .parkName {
+    height: 25%;
+  }
 }
