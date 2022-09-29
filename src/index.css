@@ -140,6 +140,8 @@ p {
   width: 80vw;
   margin: 1rem;
   position: relative;
+  background-position: center;
+  background-size: cover;
 }
 
 .imgWrapper:hover {
@@ -251,13 +253,16 @@ p {
   padding: 0;
 } */
 .parksHeader {
+  width: 100vw;
   margin-top: 4vh;
-  font-size: 8vw;
+  font-size: clamp(20px, 5vw, 50px);
   color: white;
   text-align: center;
   background-image: url("./assets/park.jpg");
   background-size: cover;
+  background-position: bottom;
   min-height: 30vh;
+  max-height: 30vh;
   background-color: black;
 }
 .camHeader {
@@ -318,6 +323,7 @@ p {
 .selectorWrapper {
   border-radius: 5px;
   border: 2px solid white;
+  max-width: 600px;
   width: 80vw;
   display: flex;
   flex-direction: column;
@@ -374,7 +380,7 @@ p {
 .selectedHeader {
   position: relative;
   background-position: center;
-  background-size: cover;
+  background-size: 100vw auto;
   padding-top: 5vh;
   height: 45vh;
   width: 100vw;
@@ -443,27 +449,7 @@ h2:first-child {
   max-height: 300px;
   width: 90%;
   bottom: -15vh;
-  /* margin-bottom: -15%; */
-
-  /* max-height: 500px;
-  max-width: 500px; */
   align-self: center;
-  /* border-radius: 5px; */
-  /* width: 60vw;
-  height: 500px; */
-  /* max-width: 1200px; */
-  /* height: auto;
-  position: absolute; */
-  /* 
-  margin-left: auto;
-  margin-right: auto;
-  bottom: 0;
-  margin-bottom: -10vw;
-  left: 0;
-  right: 0; */
-  /* height: auto; */
-  /* height: 20vw; */
-  /* width: 70vw; */
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -591,5 +577,34 @@ h2:first-child {
   .activityCardRight {
     width: 35vw;
     flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .home h1 {
+    font-size: 80px;
+  }
+  .featured {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .featured > h1 {
+    width: 100vw;
+    font-size: 6rem;
+  }
+  .featuredName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+  }
+  .imgWrapper {
+    background-size: cover;
+    background-position: center;
+    width: 30%;
+    height: 20vw;
   }
 }
