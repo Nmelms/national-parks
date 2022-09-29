@@ -1,5 +1,6 @@
 import React from "react";
-import dummy from "../assets/GC.jpg";
+import map from "../assets/map.jpg";
+import tree from "../assets/webcamTree.jpg";
 import { Link } from "react-router-dom";
 import ActivityCard from "./ActivityCard";
 
@@ -11,7 +12,7 @@ export default function Activities() {
           title={"Find A Park"}
           cardType={"activityCardLeft"}
           descprtion={"Find A Park Near you"}
-          dummy={dummy}
+          dummy={map}
         />
       </Link>
       <Link data-testid="webcams" className="link" to="/webcams">
@@ -19,7 +20,7 @@ export default function Activities() {
           cardType={"activityCardRight"}
           title={"Watch Nature WebCams"}
           descprtion={"Click here to watch nature cams"}
-          dummy={dummy}
+          dummy={tree}
         />
       </Link>
     </div>

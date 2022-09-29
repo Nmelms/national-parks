@@ -193,6 +193,7 @@ p {
   width: 500px;
 }
 .activities {
+  padding: 1rem 2rem 1rem 2rem;
   min-height: 40vh;
   display: flex;
   flex-direction: column;
@@ -200,14 +201,25 @@ p {
   border-top: 4px solid black;
   background-color: black;
 }
+
 .activityCardLeft {
   border: 2px solid black;
   text-align: center;
-  margin: 1rem;
+  margin: 1.75rem;
   height: 15vh;
   max-width: 100vw;
   justify-content: space-between;
   display: flex;
+}
+.activityCardRight {
+  border: 2px solid black;
+  text-align: center;
+  margin: 1.75rem;
+  max-width: 100vw;
+  height: 15vh;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row-reverse;
 }
 .activityCardLeft:hover .activityImg {
   transform: scale(1.05) translateX(4px);
@@ -215,16 +227,7 @@ p {
 .activityCardRight:hover .activityImg {
   transform: scale(1.05) translateX(-4px);
 }
-.activityCardRight {
-  border: 2px solid black;
-  text-align: center;
-  margin: 1rem;
-  max-width: 100vw;
-  height: 15vh;
-  justify-content: space-between;
-  display: flex;
-  flex-direction: row-reverse;
-}
+
 .activityImg {
   height: 100%;
   width: auto;
@@ -549,6 +552,7 @@ h2:first-child {
     font-size: 80px;
   }
   .imgWrapper {
+    min-height: 200px;
     background-size: cover;
     background-position: center;
     max-width: 80vw;
@@ -558,7 +562,7 @@ h2:first-child {
     width: 30vw;
   }
   .activities {
-    min-height: 0;
+    min-height: 200px;
     flex-direction: row;
     justify-content: center;
     max-height: min-content;
@@ -572,16 +576,19 @@ h2:first-child {
   }
   .activityCardLeft {
     width: 35vw;
+    height: 20vw;
     flex-direction: column;
   }
   .activityCardRight {
     width: 35vw;
+    height: 20vw;
     flex-direction: column;
   }
 }
 
 @media screen and (min-width: 1000px) {
   .home h1 {
+    padding-top: 15vh;
     font-size: 80px;
   }
   .featured {
@@ -593,7 +600,8 @@ h2:first-child {
   }
   .featured > h1 {
     width: 100vw;
-    font-size: 6rem;
+    font-size: 3rem;
+    padding-bottom: 2rem;
   }
   .featuredName {
     display: flex;
@@ -606,5 +614,33 @@ h2:first-child {
     background-position: center;
     width: 30%;
     height: 20vw;
+  }
+  .activityImg {
+    height: 25vw;
+  }
+  .activities {
+    padding-top: 5rem;
+    height: 25vw;
+  }
+  .titleAndDescription {
+    padding-top: 1rem;
+  }
+  /* .activityCardLeft {
+    display: flex;
+    flex-direction: column-reverse;
+
+    background-size: cover;
+    height: 20vw;
+  }
+  .activityCardRight {
+    display: flex;
+    flex-direction: column-reverse;
+    background-image: url(./assets/webcamTree.jpg) !important;
+    background-size: cover;
+    height: 20vw;
+  } */
+  .activityImg {
+    height: 15vw;
+    width: 35vw;
   }
 }
