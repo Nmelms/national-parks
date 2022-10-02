@@ -180,6 +180,7 @@ p {
 }
 
 .featured {
+  width: 100vw;
   color: white;
   background-color: black;
   height: fit-content;
