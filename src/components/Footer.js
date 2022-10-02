@@ -5,8 +5,11 @@ export default function Footer() {
     <div className="footer">
       <p>Made possible by the National Park API</p>
       <p>
-        For more information about national parks visit the National Park
-        Service website.
+        For more information about national parks visit the{" "}
+        <a style={{ color: "white" }} href="https://www.nps.gov/">
+          {" "}
+          National Park Service website.
+        </a>
       </p>
     </div>
   );

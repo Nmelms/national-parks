@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 import useFetch from "../services/useFetch";
 import FeaturedCard from "./FeaturedCard";
 import { faArrowLeft, faTree } from "@fortawesome/free-solid-svg-icons";
@@ -133,6 +134,7 @@ export default function Parks({
             })}
         </div>
       </div>
+      <Footer />
     </>
   );
 }
