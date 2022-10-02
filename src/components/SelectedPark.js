@@ -36,7 +36,7 @@ export default function SelectedPark({ selectedParkData }) {
             </p>
           </div>
           <div>
-            <h4>Enterence Fee</h4>
+            <h4>Entrance Fee:</h4>
             <p>
               {selectedParkData.entranceFees[0] === undefined ? (
                 <p>no price available</p>
@@ -59,7 +59,7 @@ export default function SelectedPark({ selectedParkData }) {
       </div>
 
       <div className="selectedDescripton">
-        <h2>About this park</h2>
+        <h1>ABOUT THIS PARK</h1>
         <h2>Description</h2>
         <p>{selectedParkData.description}</p>
         <h2>Climate</h2>

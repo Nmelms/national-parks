@@ -41,7 +41,7 @@ export default function Parks({
       <NavBar />
       <div className="parks">
         <header className="parksHeader">
-          <h1>Explore Parks</h1>
+          <h1>EXPLORE PARKS</h1>
         </header>
         <div className="selectorWrapper">
           <select
