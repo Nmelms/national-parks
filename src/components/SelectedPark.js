@@ -15,7 +15,7 @@ export default function SelectedPark({ selectedParkData }) {
 
   let navigate = useNavigate();
   return (
-    <div className="selected">
+    <>
       <NavBar />
       <div
         className="selectedHeader"
@@ -44,7 +44,6 @@ export default function SelectedPark({ selectedParkData }) {
                 selectedParkData.entranceFees[0].cost
               )}
             </p>
-            {/* <p>{selectedParkData.entranceFees[0].description}</p> */}
           </div>
           <div>
             <h4>Phone #:</h4>
@@ -72,10 +71,7 @@ export default function SelectedPark({ selectedParkData }) {
                 ? `url(${img})`
                 : `url(${selectedParkData.images[2].url})`,
           }}
-        >
-          {/* <div className="midImg">
-          <img src={selectedParkData.images[2].url} /> */}
-        </div>
+        ></div>
       </div>
       <div className="todo">
         <h2>Things to Do</h2>
@@ -89,6 +85,6 @@ export default function SelectedPark({ selectedParkData }) {
         </ul>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }

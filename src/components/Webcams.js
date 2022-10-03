@@ -33,31 +33,30 @@ export default function Webcams() {
   return (
     <>
       <NavBar />
-      <div className="parks">
-        <header className="camHeader">
-          <h1>Nature Cams</h1>
-        </header>
-        {error && <div>opps come back later</div>}
-        <ul className="camBody">
-          {webCams &&
-            webCams.map((cam, index) => {
-              return (
-                <a key={index} className="camLink" href={cam.url}>
-                  <div
-                    className="camCard"
-                    style={{
-                      backgroundImage: cam.images[0]
-                        ? `url(${cam.images[0].url})`
-                        : `url(${noImg})`,
-                    }}
-                  >
-                    <div className="camTitle">{cam.title}</div>
-                  </div>
-                </a>
-              );
-            })}
-        </ul>
-      </div>
+      <header className="camHeader">
+        <h1>Nature Cams</h1>
+      </header>
+
+      {error && <div>opps come back later</div>}
+      <ul className="camBody">
+        {webCams &&
+          webCams.map((cam, index) => {
+            return (
+              <a key={index} className="camLink" href={cam.url}>
+                <div
+                  className="camCard"
+                  style={{
+                    backgroundImage: cam.images[0]
+                      ? `url(${cam.images[0].url})`
+                      : `url(${noImg})`,
+                  }}
+                >
+                  <div className="camTitle">{cam.title}</div>
+                </div>
+              </a>
+            );
+          })}
+      </ul>
     </>
   );
 }
