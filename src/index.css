@@ -159,6 +159,7 @@ p {
   filter: brightness(100%);
 }
 .noData {
+  padding: 0 1rem 0 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -249,7 +250,7 @@ p {
   margin-bottom: 0.25rem;
 }
 .parks {
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -332,14 +333,14 @@ p {
 .selectorWrapper {
   border-radius: 5px;
   max-width: 600px;
-  width: 100vw;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100px;
   background: black;
   position: absolute;
-  top: 35vh;
+  top: 34vh;
   z-index: 1;
 }
 .tempCard {
@@ -367,7 +368,7 @@ p {
   padding-top: 8rem;
   background-color: black;
   width: 100vw;
-  min-height: 53vh;
+  min-height: 50vh;
   height: fit-content;
   overflow: auto;
 }
