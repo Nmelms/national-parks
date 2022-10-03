@@ -23,7 +23,7 @@ export default function Webcams() {
     }
     const data = await res.json();
     const filtered = await data.data.filter((item) => item.status === "Active");
-    setWebCams(data.data);
+    setWebCams(filtered);
   };
 
   useEffect(() => {
@@ -42,17 +42,18 @@ export default function Webcams() {
           {webCams &&
             webCams.map((cam, index) => {
               return (
-                <div
-                  key={index}
-                  className="camCard"
-                  style={{
-                    backgroundImage: cam.images[0]
-                      ? `url(${cam.images[0].url})`
-                      : `url(${noImg})`,
-                  }}
-                >
-                  <div className="camTitle">{cam.title}</div>
-                </div>
+                <a key={index} className="camLink" href={cam.url}>
+                  <div
+                    className="camCard"
+                    style={{
+                      backgroundImage: cam.images[0]
+                        ? `url(${cam.images[0].url})`
+                        : `url(${noImg})`,
+                    }}
+                  >
+                    <div className="camTitle">{cam.title}</div>
+                  </div>
+                </a>
               );
             })}
         </ul>

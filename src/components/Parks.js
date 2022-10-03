@@ -18,7 +18,6 @@ export default function Parks({
 }) {
   const [stateCode, setStateCode] = useState(null);
   const [parkData, setParkData] = useState([]);
-  // const [selectedParkData, setSelectedParkData] = useState();
 
   const data = [];
   let navigate = useNavigate();
