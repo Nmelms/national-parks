@@ -637,20 +637,6 @@ h1:first-child {
   .titleAndDescription {
     padding-top: 1rem;
   }
-  /* .activityCardLeft {
-    display: flex;
-    flex-direction: column-reverse;
-
-    background-size: cover;
-    height: 20vw;
-  }
-  .activityCardRight {
-    display: flex;
-    flex-direction: column-reverse;
-    background-image: url(./assets/webcamTree.jpg) !important;
-    background-size: cover;
-    height: 20vw;
-  } */
   .activityImg {
     height: 15vw;
     width: 35vw;
