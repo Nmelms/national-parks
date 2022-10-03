@@ -38,7 +38,6 @@ export default function NavBar() {
       >
         <Link to="/parks">Explore</Link>
         <Link to="/webcams">Nature Cams</Link>
-        <Link to="/webcams">News</Link>
       </div>
     </>
   );
