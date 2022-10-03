@@ -17,7 +17,6 @@ export default function Articles() {
       {data && console.log(data)}
       {data.length > 0 &&
         data.map((article) => (
-          // (article) => console.log(article.listingImage)
           <div
             className="articleCard"
             key={article.id}

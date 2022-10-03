@@ -12,9 +12,7 @@ export default function Home({
   setSelectedParkData,
   allData,
 }) {
-  const handleClick = () => {
-    console.log("click");
-  };
+  const handleClick = () => {};
   return (
     <>
       <NavBar />

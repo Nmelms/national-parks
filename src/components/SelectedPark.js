@@ -7,10 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
 
 export default function SelectedPark({ selectedParkData }) {
-  console.log(selectedParkData);
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(selectedParkData);
   }, [selectedParkData]);
 
   let navigate = useNavigate();
