@@ -706,4 +706,7 @@ h1:first-child {
   .todo {
     padding-top: 125px;
   }
+  .camHeader {
+    min-height: 200px;
+  }
 }
