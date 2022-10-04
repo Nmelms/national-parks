@@ -128,6 +128,7 @@ export default function Parks({
                 >
                   <LazyLoadImage
                     effect="blur"
+                    className="lazyImg"
                     placeholderSrc={pic}
                     width={"100%"}
                     src={item.images[0].url}
