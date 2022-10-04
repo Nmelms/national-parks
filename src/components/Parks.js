@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import useFetch from "../services/useFetch";
 import FeaturedCard from "./FeaturedCard";
+import pic from "../assets/placeholder.png";
 import { faArrowLeft, faTree } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -125,7 +126,12 @@ export default function Parks({
                   className="parkCard"
                   onClick={() => onSelectedClick(item)}
                 >
-                  <LazyLoadImage width={"100%"} src={item.images[0].url} />
+                  <LazyLoadImage
+                    effect="blur"
+                    placeholderSrc={pic}
+                    width={"100%"}
+                    src={item.images[0].url}
+                  />
                   <h1 className="parkName">{item.fullName}</h1>
                 </div>
               );
