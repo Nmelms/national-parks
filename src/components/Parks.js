@@ -6,6 +6,7 @@ import useFetch from "../services/useFetch";
 import FeaturedCard from "./FeaturedCard";
 import { faArrowLeft, faTree } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import axios from "axios";
 
@@ -121,12 +122,10 @@ export default function Parks({
                   data-testid="card"
                   parkcode={item.parkCode}
                   key={index}
-                  className="tempCard"
-                  style={{
-                    backgroundImage: `url(${item.images[0].url})`,
-                  }}
+                  className="parkCard"
                   onClick={() => onSelectedClick(item)}
                 >
+                  <LazyLoadImage width={"100%"} src={item.images[0].url} />
                   <h1 className="parkName">{item.fullName}</h1>
                 </div>
               );
