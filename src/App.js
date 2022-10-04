@@ -28,12 +28,10 @@ function App() {
   //creates a "featured Parks" array
   useEffect(() => {
     const parks = [];
-    if (data) {
+    if (data && featuredParks.length === 0) {
       while (parks.length < 3) {
         let num = Math.floor(Math.random() * (400 + 1));
-        if (!parks.includes(data.data[num])) {
-          parks.push(data.data[num]);
-        }
+        parks.push(data.data[num]);
       }
       setFeaturedParks(parks);
     }
