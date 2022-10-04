@@ -9,6 +9,7 @@ export default function FeaturedCard({
   parkCode,
   background,
   loading,
+  item,
   setLoading,
   onSelectedClick,
 }) {
@@ -17,7 +18,7 @@ export default function FeaturedCard({
       <div
         data-testid="featuredCard"
         onLoad={() => setLoading(false)}
-        onClick={() => onSelectedClick(parkCode)}
+        onClick={() => onSelectedClick(item)}
         className="imgWrapper"
       >
         <LazyLoadImage

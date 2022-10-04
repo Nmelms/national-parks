@@ -12,13 +12,8 @@ export default function Featured({
   const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
 
-  const onSelectedClick = (parkCode) => {
-    console.log(allData.data);
-    const selectedPark = allData?.data.filter(
-      (item) => item.parkCode === parkCode
-    );
-
-    setSelectedParkData(selectedPark[0]);
+  const onSelectedClick = (item) => {
+    setSelectedParkData(item);
     navigate("/selected");
   };
 
@@ -32,6 +27,7 @@ export default function Featured({
             <FeaturedCard
               key={index}
               parkCode={item.parkCode}
+              item={item}
               onSelectedClick={onSelectedClick}
               setLoading={setLoading}
               name={item.fullName}
