@@ -131,11 +131,11 @@ p {
   z-index: 5;
 }
 .featuredCard {
-  max-width: 80vw;
   min-width: 80vw;
   max-width: 500px;
   height: 50vw;
   max-height: 50vw;
+  height: 50vw;
   margin: 0.5rem;
 }
 .imgWrapper {
