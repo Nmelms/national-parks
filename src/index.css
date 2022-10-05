@@ -190,6 +190,7 @@ p {
 }
 
 .featured {
+  position: relative;
   width: 100vw;
   color: white;
   background-color: black;
@@ -203,6 +204,10 @@ p {
   z-index: 5;
   position: absolute;
   top: 50%;
+}
+.featuredLoading {
+  position: absolute;
+  top: 60%;
 }
 .activities {
   padding: 1rem 2rem 1rem 2rem;
@@ -234,7 +239,7 @@ p {
   flex-direction: row-reverse;
 }
 .activityCardLeft:hover .activityImg {
-  transform: scale(1.05) translateX(4px);
+  transform: scale(1.05);
 }
 .activityCardRight:hover .activityImg {
   transform: scale(1.05) translateX(-4px);
@@ -242,10 +247,12 @@ p {
 
 .activityImg {
   height: 100%;
+
   width: auto;
 }
 .titleAndDescription {
   width: 50%;
+  padding: 0.5rem;
   background-color: black;
   display: flex;
   flex-direction: column;
