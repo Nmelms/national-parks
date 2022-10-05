@@ -22,6 +22,7 @@ export default function FeaturedCard({
         className="imgWrapper"
       >
         <LazyLoadImage
+          className="lazyImg"
           effect="blur"
           placeholderSrc={pic}
           src={background}

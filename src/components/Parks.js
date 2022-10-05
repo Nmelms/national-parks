@@ -131,6 +131,7 @@ export default function Parks({
                     className="lazyImg"
                     placeholderSrc={pic}
                     width={"100%"}
+                    height={"100%"}
                     src={item.images[0].url}
                   />
                   <h1 className="parkName">{item.fullName}</h1>
