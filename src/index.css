@@ -200,9 +200,9 @@ p {
   align-items: center;
 }
 .loading {
-  background: black;
-  height: 200px;
-  width: 500px;
+  z-index: 5;
+  position: absolute;
+  top: 50%;
 }
 .activities {
   padding: 1rem 2rem 1rem 2rem;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import { ThreeDots } from "react-loader-spinner";
 import useFetch from "../services/useFetch";
 import FeaturedCard from "./FeaturedCard";
 import pic from "../assets/placeholder.png";
@@ -20,6 +21,7 @@ export default function Parks({
 }) {
   const [stateCode, setStateCode] = useState(null);
   const [parkData, setParkData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const data = [];
   let navigate = useNavigate();
@@ -31,11 +33,14 @@ export default function Parks({
   };
 
   const handleChange = async (e) => {
+    setLoading(true);
+    setParkData([]);
     const res = await fetch(
       `https://developer.nps.gov/api/v1/parks?limit=50&stateCode=${e}&api_key=GwaTBYubTD2cu99IdYnM3NlKVj7HupkkxMxYU913`
     );
     const data = await res.json();
     setParkData(data.data);
+    setLoading(false);
   };
 
   return (
@@ -114,6 +119,18 @@ export default function Parks({
             <h2>Select a state to start exploring.</h2>{" "}
             <FontAwesomeIcon icon={faTree} size="4x" />
           </div>
+        )}
+        {loading && (
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#FFFFFF"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClass="loading"
+            visible={true}
+          />
         )}
         <div className="selectedParks">
           {parkData.length > 0 &&
