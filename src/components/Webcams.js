@@ -7,6 +7,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavBar from "./NavBar";
 import noImg from "../assets/noImg.png";
+import { ThreeDots } from "react-loader-spinner";
 
 export default function Webcams() {
   const [loading, setLoading] = useState(true);
@@ -24,6 +25,7 @@ export default function Webcams() {
     const data = await res.json();
     const filtered = await data.data.filter((item) => item.status === "Active");
     setWebCams(filtered);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -39,6 +41,18 @@ export default function Webcams() {
 
       {error && <div>opps come back later</div>}
       <ul className="camBody">
+        {loading && (
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#FFFFFF"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClass="webcamLoading"
+            visible={true}
+          />
+        )}
         {webCams &&
           webCams.map((cam, index) => {
             return (
