@@ -590,6 +590,13 @@ h1:first-child {
   object-position: center;
 }
 
+.downIcon {
+  position: absolute;
+  bottom: 15%;
+  color: white;
+  align-self: center;
+}
+
 @media screen and (min-width: 600px) {
   .home h1 {
     font-size: 80px;

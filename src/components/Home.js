@@ -5,6 +5,8 @@ import NavBar from "./NavBar";
 import Featured from "./Featured";
 import Activities from "./Activities";
 import Footer from "./Footer";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Home({
   bgPic,
@@ -21,6 +23,13 @@ export default function Home({
         <Link className="exploreBtn" to="/parks">
           Explore Parks
         </Link>
+        <FontAwesomeIcon
+          data-testid="downIcon"
+          onClick={handleClick}
+          className="downIcon"
+          size="4x"
+          icon={faChevronDown}
+        />
       </div>
       <Featured
         allData={allData}
