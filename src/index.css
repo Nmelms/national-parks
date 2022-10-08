@@ -488,6 +488,7 @@ h1:first-child {
   max-width: 600px;
   bottom: -15vh;
   align-self: center;
+  margin: 0 auto;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
